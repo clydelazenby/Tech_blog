@@ -7,12 +7,12 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @post.user.email %>
+  <%= @post.user.username %>
 </p>
 
 <p>
   <strong>Blog entry:</strong>
-  <%= @post.blog_entry %>
+  <%= @post.blog_entry.html_safe %>
 </p>
 
 <div>
@@ -20,7 +20,7 @@
 	
 	<% @post.comments.each do |comment| %>
 		<div class="well">
-			<%= comment.user.email %> says... <br/>
+			<%= comment.user.username %> says... <br/>
 			<%= comment.comment_entry %>
 	<% end %>
 </div>
